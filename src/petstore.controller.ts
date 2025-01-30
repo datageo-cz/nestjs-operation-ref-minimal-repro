@@ -1,10 +1,9 @@
 import { Controller, Get } from '@nestjs/common';
 import { ApiOperation } from '@nestjs/swagger';
-import { AppService } from './app.service';
 
 @Controller()
-export class AppController {
-  constructor(private readonly appService: AppService) {}
+export class PetstoreController {
+  constructor() {}
 
   @Get()
   @ApiOperation(
@@ -13,7 +12,7 @@ export class AppController {
     } as any,
     { overrideExisting: true },
   )
-  getHello(): string {
-    return this.appService.getHello();
+  getPetFromPetstore() {
+    // forward request to `https://petstore.swagger.io/v2/pet/{petId}`
   }
 }
